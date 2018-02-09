@@ -23,15 +23,6 @@ Partial Public Class GroceryApp
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
     
     '''<summary>
-    '''Button1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
-    
-    '''<summary>
     '''gridView control.
     '''</summary>
     '''<remarks>
@@ -39,4 +30,58 @@ Partial Public Class GroceryApp
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents gridView As Global.System.Web.UI.WebControls.GridView
+    
+    '''<summary>
+    '''recorIdTxt control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents recorIdTxt As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''RecordNameTxt control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RecordNameTxt As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''RecordCountTxt control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents RecordCountTxt As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''createRecord control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents createRecord As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''EditRecord control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents EditRecord As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''DeleteRecord control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents DeleteRecord As Global.System.Web.UI.WebControls.Button
 End Class

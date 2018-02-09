@@ -6,12 +6,10 @@ Public Class GroceryApp
     Private _conn As SqlConnection
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Dim data As DataTable
 
-        If (Not Me.IsPostBack) Then
-            data = Me.GetLists
-            gridView.DataSource = data
-            gridView.DataBind()
+
+        If (Not IsPostBack) Then
+            Me.RefreshList()
         End If
 
     End Sub
@@ -32,10 +30,10 @@ Public Class GroceryApp
         Dim dbAdpt As SqlDataAdapter
 
         Me.OpenConnection()
+        Me._conn.Open()
         qryStr = "SELECT * FROM [GroceryLists]"
         qry = New SqlCommand(qryStr, Me._conn)
         qry.CommandType = CommandType.Text
-        Me._conn.Open()
 
         resultSet = New DataTable()
         dbAdpt = New SqlDataAdapter(qry)
@@ -49,8 +47,66 @@ Public Class GroceryApp
         Return resultSet
     End Function
 
-    Protected Sub Button1_Click1(sender As Object, e As EventArgs) Handles Button1.Click
-        OpenConnection()
-        CloseConnection()
+    Sub RefreshList()
+        Dim data As DataTable
+        data = Me.GetLists
+        gridView.DataSource = data
+        gridView.DataBind()
+    End Sub
+
+    Sub ClearBox()
+        recorIdTxt.Text = ""
+        RecordNameTxt.Text = ""
+        RecordCountTxt.Text = ""
+    End Sub
+
+    Function TransactQuery(qryStr As String)
+        Dim transact As SqlTransaction
+        Dim qry As SqlCommand
+
+        Me.OpenConnection()
+        Me._conn.Open()
+        transact = Me._conn.BeginTransaction()
+        qry = New SqlCommand(qryStr, Me._conn, transact)
+        qry.CommandType = CommandType.Text
+        qry.ExecuteNonQuery()
+        transact.Commit()
+
+        transact.Dispose()
+        qry.Dispose()
+    End Function
+
+    Protected Sub createRecord_Click(sender As Object, e As EventArgs) Handles createRecord.Click
+        Dim qryStr As String
+
+        qryStr = "INSERT INTO [GroceryLists] (GroceryName, GroceryQty) "
+        qryStr = qryStr & "VALUES ('" & RecordNameTxt.Text & "'," & RecordCountTxt.Text & ")"
+        Me.TransactQuery(qryStr)
+
+        Me.RefreshList()
+        Me.ClearBox()
+    End Sub
+
+    Protected Sub EditRecord_Click(sender As Object, e As EventArgs) Handles EditRecord.Click
+        Dim qryStr As String
+
+        qryStr = "UPDATE [GroceryLists] SET "
+        qryStr = qryStr & "GroceryName = '" & RecordNameTxt.Text & "', GroceryQty = " & RecordCountTxt.Text & " "
+        qryStr = qryStr & "WHERE GroceryListID = " & recorIdTxt.Text
+        Me.TransactQuery(qryStr)
+
+        Me.RefreshList()
+        Me.ClearBox()
+    End Sub
+
+    Protected Sub DeleteRecord_Click(sender As Object, e As EventArgs) Handles DeleteRecord.Click
+        Dim qryStr As String
+
+        qryStr = "DELETE FROM [GroceryLists] "
+        qryStr = qryStr & "WHERE GroceryListID = " & recorIdTxt.Text
+        Me.TransactQuery(qryStr)
+
+        Me.RefreshList()
+        Me.ClearBox()
     End Sub
 End Class
