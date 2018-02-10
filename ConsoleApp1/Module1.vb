@@ -55,7 +55,7 @@ Module Module1
         'End While
 
         'Dim employee As ContractualEmployee
-        'Dim sb As New StringBuilder
+
 
         'employee = New ContractualEmployee("Rico")
 
@@ -73,6 +73,11 @@ Module Module1
         FormatPhone("111222123456")
         Console.WriteLine("1112221234567")
         FormatPhone("1112221234567")
+
+        Dim sb As New StringBuilder
+        sb.Append("abcd")
+        sb.Insert(2, "e")
+        Console.WriteLine(sb)
 
         Console.ReadLine()
 
