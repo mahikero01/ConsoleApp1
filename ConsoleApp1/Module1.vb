@@ -63,27 +63,58 @@ Module Module1
 
 
 
-        Console.WriteLine("56 789 45 - 7890 - 567")
-        FormatPhone("56 789 45 - 7890 - 567")
-        Console.WriteLine("1112221234")
-        FormatPhone("1112221234")
-        Console.WriteLine("11122212345")
-        FormatPhone("11122212345")
-        Console.WriteLine("111222123456")
-        FormatPhone("111222123456")
-        Console.WriteLine("1112221234567")
-        FormatPhone("1112221234567")
+        'Console.WriteLine("56 789 45 - 7890 - 567")
+        'FormatPhone("56 789 45 - 7890 - 567")
+        'Console.WriteLine("1112221234")
+        'FormatPhone("1112221234")
+        'Console.WriteLine("11122212345")
+        'FormatPhone("11122212345")
+        'Console.WriteLine("111222123456")
+        'FormatPhone("111222123456")
+        'Console.WriteLine("1112221234567")
+        'FormatPhone("1112221234567")
 
-        Dim sb As New StringBuilder
-        sb.Append("abcd")
-        sb.Insert(2, "e")
-        Console.WriteLine(sb)
+        'Dim sb As New StringBuilder
+        'sb.Append("abcd")
+        'sb.Insert(2, "e")
+        'Console.WriteLine(sb)
 
-        Console.ReadLine()
+        'Console.WriteLine("0 is " & CheckIfPrime(0))
+        'Console.WriteLine("1 is " & CheckIfPrime(1))
+        'Console.WriteLine("2 is " & CheckIfPrime(2))
+        'Console.WriteLine("3 is " & CheckIfPrime(3))
+        'Console.WriteLine("4 is " & CheckIfPrime(4))
+        'Console.WriteLine("5 is " & CheckIfPrime(5))
+        'Console.WriteLine("6 is " & CheckIfPrime(6))
+        'Console.WriteLine("7 is " & CheckIfPrime(7))
+        'Console.WriteLine("8 is " & CheckIfPrime(8))
+        'Console.WriteLine("9 is " & CheckIfPrime(9))
+        'Console.WriteLine("10 is " & CheckIfPrime(10))
+        'Console.WriteLine("11 is " & CheckIfPrime(11))
+        'Console.WriteLine("12 is " & CheckIfPrime(12))
+        'Console.WriteLine("13 is " & CheckIfPrime(13))
+        'Console.ReadLine()
 
 
 
     End Sub
+
+    Function CheckIfPrime(number As Integer) As String
+        Dim noRemainder As Integer = 0
+        'Dim result As String = 
+
+        For count As Integer = 2 To number
+            If number Mod count = 0 Then
+                noRemainder += 1
+            End If
+        Next
+
+        If noRemainder = 1 Then
+            Return "Prime"
+        End If
+
+        Return "Not Prime"
+    End Function
 
     Sub FormatPhone(phone As String)
         Dim sb As New StringBuilder
