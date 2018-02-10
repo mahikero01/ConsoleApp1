@@ -76,7 +76,10 @@ Module Module1
 
         'Dim sb As New StringBuilder
         'sb.Append("abcd")
-        'sb.Insert(2, "e")
+        'sb.Insert(1, "e")
+        'sb.Remove(0, 2)
+        'sb.AppendLine("efg")
+        'sb.AppendLine("hij")
         'Console.WriteLine(sb)
 
         'Console.WriteLine("0 is " & CheckIfPrime(0))
@@ -93,7 +96,10 @@ Module Module1
         'Console.WriteLine("11 is " & CheckIfPrime(11))
         'Console.WriteLine("12 is " & CheckIfPrime(12))
         'Console.WriteLine("13 is " & CheckIfPrime(13))
-        'Console.ReadLine()
+        '
+
+
+        Console.ReadLine()
 
 
 
