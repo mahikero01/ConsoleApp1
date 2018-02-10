@@ -1,4 +1,7 @@
-﻿Module Module1
+﻿Imports System.Text
+Imports EmployeeClass
+
+Module Module1
 
     Enum Suits
         Club = 50
@@ -8,28 +11,28 @@
     End Enum
 
     Sub Main()
-        Dim testAr() As Integer = {1, 2, 3}
-        Dim testEnum As Suits
-        Dim age As Integer = 10
+        'Dim testAr() As Integer = {1, 2, 3}
+        'Dim testEnum As Suits
+        'Dim age As Integer = 10
 
-        Console.WriteLine(testAr(0))
-        Console.WriteLine(testEnum.Heart)
-
-
-
-        If age > 18 Then
-            Console.WriteLine("you have milk")
-        End If
+        'Console.WriteLine(testAr(0))
+        'Console.WriteLine(testEnum.Heart)
 
 
-        Select Case age
-            Case Is < 18
-                Console.WriteLine("you have milk")
-            Case Is = 19
-                Console.WriteLine("you have beer")
-            Case Else
-                Console.WriteLine("you are old")
-        End Select
+
+        'If age > 18 Then
+        '    Console.WriteLine("you have milk")
+        'End If
+
+
+        'Select Case age
+        '    Case Is < 18
+        '        Console.WriteLine("you have milk")
+        '    Case Is = 19
+        '        Console.WriteLine("you have beer")
+        '    Case Else
+        '        Console.WriteLine("you are old")
+        'End Select
 
         'Dim count As Integer = Console.ReadLine
 
@@ -40,22 +43,84 @@
 
         'Next
 
-        For Each num As Integer In testAr
-            Console.WriteLine(num)
-        Next
+        'For Each num As Integer In testAr
+        '    Console.WriteLine(num)
+        'Next
 
-        Dim count2 As Integer = 0
+        'Dim count2 As Integer = 0
 
-        While count2 < testAr.Length
-            Console.WriteLine(testAr(count2))
-            count2 += 1
-        End While
+        'While count2 < testAr.Length
+        '    Console.WriteLine(testAr(count2))
+        '    count2 += 1
+        'End While
 
+        'Dim employee As ContractualEmployee
+        'Dim sb As New StringBuilder
+
+        'employee = New ContractualEmployee("Rico")
+
+        'Console.WriteLine(employee.FName)
+
+
+
+        Console.WriteLine("56 789 45 - 7890 - 567")
+        FormatPhone("56 789 45 - 7890 - 567")
+        Console.WriteLine("1112221234")
+        FormatPhone("1112221234")
+        Console.WriteLine("11122212345")
+        FormatPhone("11122212345")
+        Console.WriteLine("111222123456")
+        FormatPhone("111222123456")
+        Console.WriteLine("1112221234567")
+        FormatPhone("1112221234567")
 
         Console.ReadLine()
 
 
 
+    End Sub
+
+    Sub FormatPhone(phone As String)
+        Dim sb As New StringBuilder
+        Dim sbClean As New StringBuilder
+        Dim sbFormat As New StringBuilder
+        Dim digiCount As Integer = 0
+
+        sb.Clear()
+        sbClean.Clear()
+        sbFormat.Clear()
+        sb.Append(phone)
+        sb.Replace(" ", "")
+
+        For counter As Integer = 0 To sb.Length - 1
+            If Char.IsDigit(sb(counter)) Then
+                sbClean.Append(sb(counter))
+            End If
+        Next
+        sb = Nothing
+
+        For counter As Integer = 1 To sbClean.Length
+            sbFormat.Append(sbClean(counter - 1))
+            digiCount += 1
+            If digiCount = 3 And counter <> sbClean.Length Then
+                sbFormat.Append("-")
+                digiCount = 0
+
+                If sbClean.Length - counter = 4 Then
+                    For lastCount = 1 To 4
+                        sbFormat.Append(sbClean(counter + lastCount - 1))
+                        If lastCount = 2 Then
+                            sbFormat.Append("-")
+                        End If
+                    Next
+                    Exit For
+                End If
+            End If
+        Next
+
+        sbClean = Nothing
+
+        Console.WriteLine(sbFormat)
     End Sub
 
     Function Fibo(count As Integer) As Integer

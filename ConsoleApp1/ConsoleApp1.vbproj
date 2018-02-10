@@ -105,5 +105,11 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EmployeeClass\EmployeeClass.vbproj">
+      <Project>{78d001f8-eeda-4694-a9a9-0a1fbbd30e5e}</Project>
+      <Name>EmployeeClass</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
