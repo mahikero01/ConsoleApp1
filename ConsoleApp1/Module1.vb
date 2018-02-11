@@ -11,6 +11,14 @@ Module Module1
     End Enum
 
     Sub Main()
+
+        'Dim s1 = "Fr"
+        'Dim s2 = "fR"
+        'Dim s3 = "fF"
+        'Console.WriteLine(String.Compare(s1, s2, True))
+        'Console.WriteLine(String.Compare(s1, s3, True))
+        'Console.WriteLine(String.Compare(s3, s1, True))
+
         'Dim testAr() As Integer = {1, 2, 3}
         'Dim testEnum As Suits
         'Dim age As Integer = 10
