@@ -84,6 +84,14 @@ Module Module1
 
         'Dim sb As New StringBuilder
         'sb.Append("abcd")
+        'Dim se = sb.Length
+        'Dim sd = sb.Chars(0)
+        'Console.WriteLine(sd)
+
+
+        'Dim lst As New List(Of String)
+
+
         'sb.Insert(1, "e")
         'sb.Remove(0, 2)
         'sb.AppendLine("efg")

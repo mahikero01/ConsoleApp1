@@ -265,6 +265,21 @@ Class Shape Implements IXmlExport
 End Class
 
 
+#StringBuilder
+Dim str as New StringBuilder
+
+- str.Append("abcdef")  'add string at the end
+- str.Length  'return length of string e.g. 6
+- str.Chars(int32) or str(int32)  'get/set specifie character in the instance
+- str.AppendLine()    'insert next line
+- str.AppendLine(string)  'insert string at the end then next line
+- str.Clear()       'clear content 
+- str.Equals(Object)    'return true if the object is the same with the instance
+- str.Insert(int32, string)   'Inserts a string into this instance at the specified character position
+- str.Remove(int32, int32)    'Removes the specified range of characters from this instance
+- str.Replace(String, String)   'Replaces all occurrences of a specified string in this instance with another specified string
+
+
 #List
 Dim squares as New List(Of Square)
 'Dim squares as New ArrayList()
@@ -273,20 +288,22 @@ For Each square In squares
 	'...
 Next
 
-squares.Capacity  'set/get capacity
-squares.Count   'get/set  number of element
-squares.Item(Int32)   'get/set the element at the specified index
+- squares.Capacity  'set/get capacity
+- squares.Count   'get/set  number of element
+- squares.Item(Int32)   'get/set the element at the specified index
 
-squares.Add(Object)  'add object at the end
-squares.Clear()       'removes all element
-squares.Clone()   	   'create a shallow copy
-squares.Contains(Object)  'determine whether an element is in the list
-squares.IndexOf(Object)		'firts occurance of object 
-squares.Insert(Int32, Object)  'insert object on specified index
-squares.Remove(Object)      'remove the first occurance of specified object
-squares.RemoveAt(Int32)     ' remove element at specified index
-squares.Sort()				'sort arraylist
-squares.Reverse()           'reverse order 
+- squares.Add(Object)  'Adds an object to the end of the List(Of T)
+- squares.Clear()       'Removes all elements from the List(Of T)
+- squares.Contains(T)  'Determines whether an element is in the List(Of T)
+- squares.Equals(Object)   'Determines whether the specified object is equal to the current object.(Inherited from Object.)
+- squares.IndexOf(T)		'Searches for the specified object and returns the zero-based index of the first occurrence within the entire List(Of T)
+- squares.Insert(Int32, T)  'Inserts an element into the List(Of T) at the specified index
+- squares.LastIndexOf(T)     'Searches for the specified object and returns the zero-based index of the last occurrence within the entire List(Of T)
+- squares.Remove(T)      'Removes the first occurrence of a specific object from the List(Of T)
+- squares.RemoveAt(Int32)     'Removes the element at the specified index of the List(Of T)
+- squares.Reverse()           'Reverses the order of the elements in the entire List(Of T)
+- squares.Sort()       'Sorts the elements in the entire List(Of T) using the default comparer.
+- squares.ToArray()      'Copies the elements of the List(Of T) to a new array.
 
 
 #Dictionary
