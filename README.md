@@ -1,38 +1,38 @@
 #Variables
-FCL         VB
-Int32      Integer
-Int64      Long
-Boolean    Boolean
-Single      Single
-Double     Double
-Decimal    Decimal
-DateTime   Date
-String     String
+- FCL         VB
+- Int32      Integer
+- Int64      Long
+- Boolean    Boolean
+- Single      Single
+- Double     Double
+- Decimal    Decimal
+- DateTime   Date
+- String     String
 
 
 #Operator
-Mathematical (+, -, *, /,\, Mod)
-Relational (<, >, <=, >=)
-Equality (==, <>)
-Conditional (And, Or, AndAlso, OrElse)
-Assignment (=, +=, -=, *=, /=)
-String Concatenate (&)
+- Mathematical (+, -, *, /,\, Mod)
+- Relational (<, >, <=, >=)
+- Equality (==, <>)
+- Conditional (And, Or, AndAlso, OrElse)
+- Assignment (=, +=, -=, *=, /=)
+- String Concatenate (&)
 
 
 #Array
-Dim suits(3) As String
+- Dim suits(3) As String
 months(0) = "Clubs"
 months(1) = "Diamonds"
 months(2) = "Hearts"
 months(3) = "Spades"
 
-Dim numbers() As Integer = {40, 50, 60, 70}
+- Dim numbers() As Integer = {40, 50, 60, 70}
 
-Dim grid = {{1,2},{3,4}}
+- Dim grid = {{1,2},{3,4}}
 
 
 #Enum
-Public Enum Suit
+- Public Enum Suit
 	Clubs = 1
 	Diamonds = 3
 	Hearts = 6
@@ -41,17 +41,17 @@ End Num
 
 
 #If 
-If conditionStatement Then
+- If conditionStatement Then
 	'...
 End If
 
-If conditionStatement Then
+- If conditionStatement Then
 	'...
 Else
 	'...
 End If
 
-If conditionStatement Then
+- If conditionStatement Then
 	'...
 ElseIf
 	'...
@@ -61,7 +61,7 @@ End If
 
 
 #Case
-Select Case code
+- Select Case code
 	Case 1
 		'...
 	Case Is < 10
@@ -74,46 +74,46 @@ End Select
 
 
 #For
-For i = 1 To max
+- For i = 1 To max
 	'...
 Next
 
-For i = max To 1 Step -1
+- For i = max To 1 Step -1
 	'...
 Next
 
-Exit For   ---  exit loop
-Continue   ---  skip to the next iteration
+- Exit For   ---  exit loop
+- Continue   ---  skip to the next iteration
 
 #while
-While index <= 10
+- While index <= 10
 	index += 1
 	'...
 End While
 
 
 #For Each
-For Each age As Integer In ages
+- For Each age As Integer In ages
 	'...
 Next
 
 
 #Procedure
-Sub FunctionName(ByVal value As String, ByRef value2 As String)
+- Sub FunctionName(ByVal value As String, ByRef value2 As String)
 	'...
 End Sub
 
-Sub FunctionName(ByRef value2 As String)
+- Sub FunctionName(ByRef value2 As String)
 	'...
 End Sub
 
-Function FunctionName (ByVal val As Integer) As Integer
+- Function FunctionName (ByVal val As Integer) As Integer
 	'...
 End Function
 
 
 #Exception
-Try
+- Try
 	'...
 Catch ex1 As DivideByZeroException
 	'...
@@ -125,19 +125,19 @@ Finally
 	'...
 End Try
 
-Sub ThrowingEx()
+- Sub ThrowingEx()
 	Throw New ArgumentException()
 End Sub
 
 
 #Class
-Public Class ClassName
+- Public Class ClassName
 	'...
 End Class
 
 
 #Fields
-Class Employee
+- Class Employee
 	Public Name As String
 	Public Salary As Boolean
 	Private _birthDate As DateTime
@@ -145,7 +145,7 @@ End  Class
 
 
 #Properties
-Class Employee
+- Class Employee
 	Private _name As String
 	Private _birthDate As DateTime
 	Public Property Department As String
@@ -171,7 +171,7 @@ End Class
 
 
 #Method
-Public Class ClassName
+- Public Class ClassName
 	Public Function GetDesc()
 		'...
 	End Function 
@@ -179,7 +179,7 @@ End Class
 
 
 #Constructor
-Class Employee
+- Class Employee
 	Public Sub New()
 		'...
 	End Sub
@@ -191,36 +191,36 @@ End Class
 
 
 #Conversion
-Convert.ToInt32()
-Convert.ToBoolean()
-Convert.ToDouble()
+- Convert.ToInt32()
+- Convert.ToBoolean()
+- Convert.ToDouble()
 
-Integer.Parse()
-Boolean.Parse()
-Double.Parse()
+- Integer.Parse()
+- Boolean.Parse()
+- Double.Parse()
 
 
 #Inheritance
-Class Shape
+- Class Shape
 	'...
 	Pubic Shared Property Diameter As Double 'static equivalent
 End Class
 
-Class Square
+- Class Square
 	Inherits Shape
 End Class
 
-Class Circle
+- Class Circle
 	Inherits Shape
 End Class
 
 
 #Abstract
-Public MustInherit Class Shape
+- Public MustInherit Class Shape
 	Public MustOverride Function Area() As Integer
 End Class
 
-Public Class Square : Inherits Shape
+- Public Class Square : Inherits Shape
 	Public Ovverrides Function Area() As Integer
 		'...
 	End Function
@@ -228,24 +228,24 @@ End Class
 
 
 #Virtual Members
-Protected Overridable Sub SetColors()
+- Protected Overridable Sub SetColors()
 	'...
 End Sub
 
-Protected Overrides Sub SetColors()
+- Protected Overrides Sub SetColors()
 	'...
 	'...
 End Sub
 
 
 #Derived Constructor
-Class Shape
+- Class Shape
 	Public Sub New()
 		'...
 	End Sub
 End Class
 
-Class Rectangle : Inherits Shape
+- Class Rectangle : Inherits Shape
 	Public Sub New()
 		MyBase.New() ' call base constructor
 	End Sub
@@ -253,11 +253,11 @@ End Class
 
 
 #Interface
-Interface IXmlExport
+- Interface IXmlExport
 	Function GetXml() As String
 End Interface
 
-Class Shape Implements IXmlExport
+- Class Shape Implements IXmlExport
 	Public Function GetXml() As String _
 		Implements IXmlExport.GetXml
 		'...
@@ -266,7 +266,7 @@ End Class
 
 
 #StringBuilder
-Dim str as New StringBuilder
+- Dim str as New StringBuilder
 
 - str.Append("abcdef")  'add string at the end
 - str.Length  'return length of string e.g. 6
@@ -281,17 +281,16 @@ Dim str as New StringBuilder
 
 
 #List
-Dim squares as New List(Of Square)
-'Dim squares as New ArrayList()
+- Dim squares as New List(Of Square)
+- 'Dim squares as New ArrayList()
 
-For Each square In squares
+- For Each square In squares
 	'...
 Next
 
 - squares.Capacity  'set/get capacity
 - squares.Count   'get/set  number of element
-- squares.Item(Int32)   'get/set the element at the specified index
-
+- squares.Item(Int32) or squares(Int32)  'get/set the element at the specified index
 - squares.Add(Object)  'Adds an object to the end of the List(Of T)
 - squares.Clear()       'Removes all elements from the List(Of T)
 - squares.Contains(T)  'Determines whether an element is in the List(Of T)
@@ -307,17 +306,18 @@ Next
 
 
 #Dictionary
-Dim squares As New Dictionary(Of Integer, Square)
-'Dim squares As New Hashtable()
+- Dim squares As New Dictionary(Of Integer, Square)
+- 'Dim squares As New Hashtable()
 
-squares.Add(4, SquareObject)
+- squares.Add(4, SquareObject)
 
 
 #LINQ
-Dim query = From emp In employees
+- Dim query = From emp In employees
 			Where emp.Salaried AndAlso emp.Age > 35
 			Order By emp.Name
 			Select emp
+
 			
-Lambda
-Dim query = employees.Where( Function(e) e.Salaried AndAlso e.Age > 35 )
+#Lambda
+- Dim query = employees.Where( Function(e) e.Salaried AndAlso e.Age > 35 )

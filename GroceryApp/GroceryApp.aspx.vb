@@ -25,8 +25,8 @@ Public Class GroceryApp
 
     Function GetLists() As DataTable
         Dim resultSet As DataTable
-        Dim qryStr As String
         Dim qry As SqlCommand
+        Dim qryStr As String
         Dim dbAdpt As SqlDataAdapter
 
         Me.OpenConnection()
@@ -47,19 +47,6 @@ Public Class GroceryApp
         Return resultSet
     End Function
 
-    Sub RefreshList()
-        Dim data As DataTable
-        data = Me.GetLists
-        gridView.DataSource = data
-        gridView.DataBind()
-    End Sub
-
-    Sub ClearBox()
-        recorIdTxt.Text = ""
-        RecordNameTxt.Text = ""
-        RecordCountTxt.Text = ""
-    End Sub
-
     Function TransactQuery(qryStr As String)
         Dim transact As SqlTransaction
         Dim qry As SqlCommand
@@ -75,6 +62,21 @@ Public Class GroceryApp
         transact.Dispose()
         qry.Dispose()
     End Function
+
+    Sub RefreshList()
+        Dim data As DataTable
+        data = Me.GetLists
+        gridView.DataSource = data
+        gridView.DataBind()
+    End Sub
+
+    Sub ClearBox()
+        recorIdTxt.Text = ""
+        RecordNameTxt.Text = ""
+        RecordCountTxt.Text = ""
+    End Sub
+
+
 
     Protected Sub createRecord_Click(sender As Object, e As EventArgs) Handles createRecord.Click
         Dim qryStr As String

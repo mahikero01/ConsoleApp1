@@ -90,7 +90,7 @@ Module Module1
 
 
         'Dim lst As New List(Of String)
-
+        'Dim rt = lst(0)
 
         'sb.Insert(1, "e")
         'sb.Remove(0, 2)
