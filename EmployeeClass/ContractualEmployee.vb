@@ -2,7 +2,8 @@
     Inherits EmployeeInfo
 
     Public Sub New(fName As String)
-        Me.FName = fName
+        'Me.FName = fName
+        MyBase.New(fName)
     End Sub
 
     Public Sub ComputeSalary()
